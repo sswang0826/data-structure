@@ -1,4 +1,5 @@
-#Queue
+Queue
+=======
 <br>
 queue相較於array增加了限制: 只能在對首刪除、隊尾增加<br>
 帶有FIFO(first in, first out)的特性<br>
@@ -26,6 +27,7 @@ Index | 0 | 1 | 2 | 3 | 4
 element  | a1 | a2 |   |   |  
 
 可以看出會有O(N)的move動作，因為會有以下兩種變形<br>
+<br>
 
 Circular Queue
 -------------
@@ -65,8 +67,12 @@ size()的條件改為如下
     return rear - front;
   }
 ```
+<br>
 
 linked Queue
 -------------
-
+linked Queuey則是在基本的linked list上<br>
+除了原本紀錄的front之外，增加一個pointer紀錄back<br>
+並且增加counter紀錄size即可<br>
+<br>
 
