@@ -6,7 +6,11 @@ queue相較於array增加了限制: 只能在對首刪除、隊尾增加<br>
 以最基礎的實作來說，是在pop最前面的element之後<br>
 將後面所有向前move，此為array形式的queue<br>
 而為了避免move的耗時過久，後續有Circular Queue跟Linked Queue<br>
-<br>
+最常見的地方用於Breadth-First Search與tree的Level-Order Traversal<br>
+經典的題型有:<br>
+楊輝三角形(Pascal’s Triangle)<br>
+售票排隊問題(Ticketing Queue)<br>
+迷宮問題(Maze Problem)<br>
 <br>
 
 Array Queue
@@ -75,4 +79,29 @@ linked Queuey則是在基本的linked list上<br>
 除了原本紀錄的front之外，增加一個pointer紀錄back<br>
 並且增加counter紀錄size即可<br>
 <br>
+
+楊輝三角形(Pascal’s Triangle)
+-------------
+楊輝三角形是二項式係數的一種寫法<br>
+範例如下:<br>
+1<br>
+1 1 <br>
+1 2 1<br>
+1 3 3 1<br>
+示範程式如下<br>
+主要利用queue的順序，固定處理由左至右的係數<br>
+為了理解方便，會寫得較為冗餘<br>
+```
+std::queue<int> q;
+for (int i = 0; i < n; i++) { // n is layer
+  for (int j = 1; j < i; j++) {
+    int left = q.front();
+    q.pop();
+    int right = q.front();
+    q.push(left + right);
+  }
+  q.push(1);
+  PrintQueue(q);
+}
+```
 
