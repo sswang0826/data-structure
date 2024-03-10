@@ -50,6 +50,12 @@ Queue
 -------------
 queue相較於array增加了限制: 只能在對首刪除、隊尾增加<br>
 帶有FIFO(first in, first out)的特性<br>
-
-
-
+以最基礎的實作來說，是在pop最前面的element之後<br>
+將後面所有向前move，此為array形式的queue<br>
+而為了避免move的耗時過久，後續有Circular Queue跟Linked Queue<br>
+經典的題型有<br>
+* 楊輝三角形(Pascal’s Triangle)<br>
+* 售票排隊問題(Ticketing Queue)<br>
+* 迷宮問題(Maze Problem)<br>
+更多詳細內容可以參考這裡<br>
+<br>
